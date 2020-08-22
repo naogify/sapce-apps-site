@@ -8,6 +8,7 @@
     "start": "gatsby develop",
     "develop": "gatsby develop",
     "build": "gatsby build",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "lint": "npm run lint:ts && npm run lint:md && npm run lint:js && npm run lint:css",
     "lint:ts": "tslint \"./src/**/*.ts\" \"./src/**/*.tsx\"",
     "lint:md": "remark .",
@@ -111,10 +112,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "keywords": [
-    "gatsby",
-    "starter"
-  ],
+  "keywords": ["gatsby", "starter"],
   "jest": {
     "globals": {
       "__LINK_PREFIX__": "",
@@ -130,36 +128,15 @@
       "/templates/",
       "/.cache"
     ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx"
-    ],
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx"],
     "collectCoverage": true,
-    "coverageReporters": [
-      "lcov",
-      "text",
-      "html"
-    ]
+    "coverageReporters": ["lcov", "text", "html"]
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "tslint --fix",
-      "git add"
-    ],
-    "*.{js,jsx}": [
-      "xo --fix",
-      "git add"
-    ],
-    "*.md": [
-      "node tools/update-post-date.js",
-      "remark -o",
-      "git add"
-    ],
-    "*.css": [
-      "stylelint"
-    ]
+    "*.{ts,tsx}": ["tslint --fix", "git add"],
+    "*.{js,jsx}": ["xo --fix", "git add"],
+    "*.md": ["node tools/update-post-date.js", "remark -o", "git add"],
+    "*.css": ["stylelint"]
   },
   "xo": {
     "extends": "xo-react/space",
@@ -168,26 +145,15 @@
       "no-case-declarations": 0,
       "default-case": 0
     },
-    "ignores": [
-      "**/*.tsx",
-      "**/*.ts"
-    ]
+    "ignores": ["**/*.tsx", "**/*.ts"]
   },
   "remarkConfig": {
-    "plugins": [
-      "remark-preset-lint-recommended",
-      "remark-frontmatter"
-    ]
+    "plugins": ["remark-preset-lint-recommended", "remark-frontmatter"]
   },
   "stylelint": {
     "extends": "stylelint-config-standard"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"],
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
