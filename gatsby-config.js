@@ -1,6 +1,6 @@
 /* eslint-disable quotes */
 module.exports = {
-  pathPrefix: "/gatsby-starter",
+  pathPrefix: "/sapce-apps-site",
   siteMetadata: {
     title: `My website`,
     googleVerification: `abcdefz`,
